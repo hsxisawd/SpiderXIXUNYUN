@@ -1,30 +1,32 @@
 class Config(object):
     SignIninfo = {
         'change_sign_resource': 0,
-        'address': '广东省深圳市龙岗区横岗大康村龙村创业路4号',
+        'address': '地址',
         'remark': 0,
         'comment': 0,
-        'longitude': '114.23277768904661',
-        'latitude': '22.642906748311876',
+        'longitude': '经度',
+        'latitude': '纬度',
         'platform': 'h5',
-        'address_name': '华辉印刷制品(深圳)有限公司',
+        'address_name': '地址名',
         'file': "",
-        'province': '广东省',
-        'city': '深圳市',
-        'district': '龙岗区',
+        'province': '省份',
+        'city': '城市',
+        'district': '区名',
     }
     UserInfo = {
-        'username': "d20c05014",
-        'password': "c05014",
-        'schoolNum': "34"
+        'username': "用户名",
+        'password': "密码",
+        'schoolNum': "学校代码"
     }
+    #自动获取经纬度配置
     BaiduApiInfo = {
-        'BaiDuAK': "j77E5LUF92TCFBMVdA4uSUO3mBW8EAr9",
+        'BaiDuAK': "百度地图AK",
         'Api_url': "https://api.map.baidu.com/geocoding/v3/"
     }
+    #发送到微信公众号，测试版
     WxXinInfo = {
-        'openID': 'wx7c9c274418a99ca6',
-        'secret': '1a881de09fb7a52321bc69e7858a8ded',
-        'templateID': 'H-mun4NB2nF7SF1_fBV2_LB_nNorGxdyZS4ep8xxM00'
+        'openID': '公众号Appid',
+        'secret': '公众号secret',
+        'templateID': '模板ID'
     }
 
