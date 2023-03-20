@@ -1,11 +1,10 @@
 import requests
 import json
-import setting
-
+from setting import Config
 class GetAddressApi(object):
 
     def __init__(self):
-        self.Baidu=setting.Config.BaiduApiInfo
+        self.Baidu=Config.BaiduApiInfo
     def get_address(self,address):
 
         params={

@@ -1,16 +1,15 @@
 import requests
 import json
-import base64
 from fake_useragent import UserAgent
-import setting
+from setting import Config
 import base64
 from Crypto.Cipher import PKCS1_v1_5 as PKCS15
 from Crypto.PublicKey import RSA
 class SignIn(object):
 
     def __init__(self):
-        self.userdata = setting.Config.UserInfo
-        self.SignIninfo=setting.Config.SignIninfo
+        self.userdata = Config.UserInfo
+        self.SignIninfo=Config.SignIninfo
         self.UA = UserAgent()
 
     def SignIn(self,token):
@@ -22,7 +21,7 @@ class SignIn(object):
             'graduate_year': 0,
             'school_id': self.userdata['schoolNum']
         }
-        data=setting.Config.SignIninfo
+        data=Config.SignIninfo
         data['longitude'],data['latitude'] = self.Location_encrpt({
             'lng':self.SignIninfo['longitude'],
             'lat': self.SignIninfo['latitude']
@@ -31,7 +30,6 @@ class SignIn(object):
         response=requests.post(url,headers=headers,data=data,params=params)
         if response.status_code == 200:
             LoginInfo=response.text
-
             return json.loads(LoginInfo)
 
     def Location_encrpt(self,dictData):
